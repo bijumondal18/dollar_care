@@ -1,3 +1,4 @@
+import 'package:dollar_care/Utils/app_helper.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Commons/app_colors.dart';
@@ -5,6 +6,7 @@ import '../../../Commons/app_images.dart';
 import '../../../Commons/app_sizes.dart';
 import '../../../Widgets/custom_text_field.dart';
 import '../../../Widgets/full_button.dart';
+import '../../Home/Presentation/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -88,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: AppSizes.kDefaultPadding * 2,
                   ),
                   CustomTextField(
+                    keyboardType: TextInputType.text,
                     validator: (String? value) {
                       if (value!.isEmpty) {
                         return 'Mobile Number or Email ID can\'t be empty';
@@ -101,6 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: AppSizes.kDefaultPadding / 2,
                   ),
                   CustomTextField(
+                    keyboardType: TextInputType.visiblePassword,
                     validator: (String? value) {
                       if (value!.isEmpty) {
                         return 'Password can\'t be empty';
@@ -138,9 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       label: 'Login',
                       onPressed: () {
                         if (_key.currentState!.validate()) {
-                          // context.pushReplacement(HomeScreen(
-                          //   username: _usernameController.text,
-                          // ));
+                          context.pushReplacement(const HomeScreen());
                         }
                       }),
                   SafeArea(

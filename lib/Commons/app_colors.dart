@@ -12,7 +12,7 @@ class AppColors {
   static const darkGrey = Color(0xFF515151);
   static const lightGrey = Color(0xFFC2C1C1);
   static const grey = Color(0xFF8E8D8D);
-  static const bg = Color(0xFFD8DEFF);
+  static const bg = Color(0xFFEEEEEE);
   static const transparent = Color(0x00FFFFFF);
   static const linearGradient =
       LinearGradient(begin: Alignment.center, colors: [primary, primaryDark]);
