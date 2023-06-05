@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Mobile number / Email ID',
                   ),
                   const SizedBox(
-                    height: AppSizes.kDefaultPadding/2,
+                    height: AppSizes.kDefaultPadding / 2,
                   ),
                   CustomTextField(
                     validator: (String? value) {
@@ -150,7 +150,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Text(
                           'Don\'t have an account?',
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(fontWeight: FontWeight.w400),
                         ),
                         TextButton(
                             onPressed: () {},
