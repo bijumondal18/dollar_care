@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           Image.asset(
                             AppImages.appLogo,
-                            width: MediaQuery.of(context).size.width * 0.4,
+                            width: MediaQuery.of(context).size.width * 0.35,
                           ),
                           const SizedBox(
                             height: AppSizes.kDefaultPadding * 2,
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Mobile number / Email ID',
                   ),
                   const SizedBox(
-                    height: AppSizes.kDefaultPadding,
+                    height: AppSizes.kDefaultPadding/2,
                   ),
                   CustomTextField(
                     validator: (String? value) {
