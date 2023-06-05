@@ -30,24 +30,44 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.45,
                 padding: const EdgeInsets.symmetric(
                     horizontal: AppSizes.kDefaultPadding),
                 decoration:
                     const BoxDecoration(gradient: AppColors.radialGradient),
                 child: SafeArea(
+                    bottom: false,
                     child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                      const SizedBox(
-                        height: AppSizes.kDefaultPadding,
-                      ),
-                      Image.asset(
-                        AppImages.appLogo,
-                        width: MediaQuery.of(context).size.width * 0.6,
-                      ),
-                    ]))),
+                          const SizedBox(
+                            height: AppSizes.kDefaultPadding,
+                          ),
+                          Image.asset(
+                            AppImages.appLogo,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                          ),
+                          const SizedBox(
+                            height: AppSizes.kDefaultPadding * 2,
+                          ),
+                          Flexible(
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: AppSizes.kDefaultPadding * 2),
+                                  child: Image.asset(
+                                    AppImages.loginImage1,
+                                  ),
+                                ),
+                                Image.asset(
+                                  AppImages.loginImage2,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ]))),
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: AppSizes.kDefaultPadding),
@@ -62,7 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium!
-                          .copyWith(fontWeight: FontWeight.w400,letterSpacing: 0.2)),
+                          .copyWith(
+                              fontWeight: FontWeight.w400, letterSpacing: 0.2)),
                   const SizedBox(
                     height: AppSizes.kDefaultPadding * 2,
                   ),
@@ -107,8 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .textTheme
                                 .bodyLarge!
                                 .copyWith(
-                                    color: AppColors.primary,
-                                    fontWeight: FontWeight.w400),
+                                    color: AppColors.primaryDark,
+                                    fontWeight: FontWeight.w600),
                           )),
                     ],
                   ),
@@ -124,6 +145,29 @@ class _LoginScreenState extends State<LoginScreen> {
                           // ));
                         }
                       }),
+                  SafeArea(
+                    top: false,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Don\'t have an account?',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'SignUp Now'.toUpperCase(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                      color: AppColors.primaryDark,
+                                      fontWeight: FontWeight.w600),
+                            ))
+                      ],
+                    ),
+                  ),
                   const SizedBox(
                     height: AppSizes.kDefaultPadding * 2,
                   ),

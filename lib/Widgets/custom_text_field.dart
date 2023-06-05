@@ -97,7 +97,10 @@ class CustomTextField extends StatelessWidget {
                       borderSide: BorderSide(color: AppColors.lightGrey),
                     ),
                     hintText: hintText!,
-                    hintStyle: Theme.of(context).textTheme.bodyMedium,
+                    hintStyle: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w400),
                     labelStyle: Theme.of(context).textTheme.bodyLarge,
                     errorText: controller.text == "" ? errorText : null)
                 : InputDecoration(
@@ -108,7 +111,10 @@ class CustomTextField extends StatelessWidget {
                     contentPadding:
                         const EdgeInsets.all(AppSizes.kDefaultPadding),
                     hintText: hintText!,
-                    hintStyle: Theme.of(context).textTheme.bodyMedium,
+                    hintStyle: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w400),
                     labelStyle: Theme.of(context).textTheme.bodyLarge,
                     errorText: controller.text == "" ? errorText : null),
           ),
