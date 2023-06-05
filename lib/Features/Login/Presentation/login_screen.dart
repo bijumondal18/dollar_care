@@ -88,10 +88,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: AppSizes.kDefaultPadding * 2,
                   ),
                   CustomTextField(
-                    isBorder: false,
                     validator: (String? value) {
                       if (value!.isEmpty) {
-                        return 'Please enter username';
+                        return 'Mobile Number or Email ID can\'t be empty';
                       }
                       return null;
                     },
@@ -102,10 +101,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: AppSizes.kDefaultPadding,
                   ),
                   CustomTextField(
-                    isBorder: false,
                     validator: (String? value) {
                       if (value!.isEmpty) {
-                        return 'Please enter password';
+                        return 'Password can\'t be empty';
                       }
                       return null;
                     },

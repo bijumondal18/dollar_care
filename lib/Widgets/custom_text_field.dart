@@ -58,66 +58,56 @@ class CustomTextField extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               )
             : const SizedBox(),
-        Container(
-          margin: labelText != ''
-              ? const EdgeInsets.only(top: AppSizes.kDefaultPadding / 2)
-              : EdgeInsets.zero,
-          decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.circular(AppSizes.cardCornerRadius / 1.5),
-              border: Border.all(color: AppColors.bg)),
-          child: TextFormField(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            readOnly: readOnly ?? false,
-            validator: validator,
-            focusNode: focusNode,
-            obscureText: obscureText ?? false,
-            minLines: minLines!,
-            maxLines: maxLines!,
-            maxLength: maxLength ?? 500,
-            keyboardType: keyboardType ?? TextInputType.text,
-            cursorColor: AppColors.primary,
-            controller: controller,
-            onChanged: onChanged,
-            autofocus: autoFocus!,
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontSize: textSize ?? 16.0, fontWeight: FontWeight.w400),
-            textAlign: textAlign!,
-            decoration: isBorder!
-                ? InputDecoration(
-                    suffixIcon: suffixIcon,
-                    prefixIcon: prefixIcon,
-                    counterText: '',
-                    contentPadding:
-                        const EdgeInsets.all(AppSizes.kDefaultPadding),
-                    enabledBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.lightGrey),
-                    ),
-                    focusedBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.lightGrey),
-                    ),
-                    hintText: hintText!,
-                    hintStyle: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w400),
-                    labelStyle: Theme.of(context).textTheme.bodyLarge,
-                    errorText: controller.text == "" ? errorText : null)
-                : InputDecoration(
-                    suffixIcon: suffixIcon,
-                    prefixIcon: prefixIcon,
-                    border: InputBorder.none,
-                    counterText: '',
-                    contentPadding:
-                        const EdgeInsets.all(AppSizes.kDefaultPadding),
-                    hintText: hintText!,
-                    hintStyle: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(fontWeight: FontWeight.w400),
-                    labelStyle: Theme.of(context).textTheme.bodyLarge,
-                    errorText: controller.text == "" ? errorText : null),
-          ),
+        TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          readOnly: readOnly ?? false,
+          validator: validator,
+          focusNode: focusNode,
+          obscureText: obscureText ?? false,
+          minLines: minLines!,
+          maxLines: maxLines!,
+          maxLength: maxLength ?? 500,
+          keyboardType: keyboardType ?? TextInputType.text,
+          cursorColor: AppColors.primary,
+          controller: controller,
+          onChanged: onChanged,
+          autofocus: autoFocus!,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: textSize ?? 16.0, fontWeight: FontWeight.w400),
+          textAlign: textAlign!,
+          decoration: isBorder!
+              ? InputDecoration(
+                  suffixIcon: suffixIcon,
+                  prefixIcon: prefixIcon,
+                  counterText: '',
+                  contentPadding:
+                      const EdgeInsets.all(AppSizes.kDefaultPadding),
+                  border: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: AppColors.lightGrey,),
+                      borderRadius:
+                          BorderRadius.circular(AppSizes.cardCornerRadius)),
+                  hintText: hintText!,
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontWeight: FontWeight.w400),
+                  labelStyle: Theme.of(context).textTheme.bodyLarge,
+                  errorText: controller.text == "" ? errorText : null)
+              : InputDecoration(
+                  suffixIcon: suffixIcon,
+                  prefixIcon: prefixIcon,
+                  border: InputBorder.none,
+                  counterText: '',
+                  contentPadding:
+                      const EdgeInsets.all(AppSizes.kDefaultPadding),
+                  hintText: hintText!,
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontWeight: FontWeight.w400),
+                  labelStyle: Theme.of(context).textTheme.bodyLarge,
+                  errorText: controller.text == "" ? errorText : null),
         ),
       ],
     );
